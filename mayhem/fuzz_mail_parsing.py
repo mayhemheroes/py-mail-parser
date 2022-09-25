@@ -13,7 +13,7 @@ def TestOneInput(data):
         if mail:
             mail.get_server_ipaddress('localhost')
     except mailparser.exceptions.MailParserError:  # Want to ignore exceptions that are already handled by lib
-        pass
+        return
 
 
 def main():
