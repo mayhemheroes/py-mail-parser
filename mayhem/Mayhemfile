@@ -1,7 +1,7 @@
 project: mail-parser
 target: mail-parser-fuzz
 testsuite:
-    - file://testsuite
+    - file://tests
 
 cmds:
   - cmd: /mail-parser/mayhem/fuzz_mail_parsing.py
