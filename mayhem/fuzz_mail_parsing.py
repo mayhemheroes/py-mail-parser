@@ -9,9 +9,7 @@ with atheris.instrument_imports():
 @atheris.instrument_func
 def TestOneInput(data):
     try:
-        mail = mailparser.parse_from_bytes(data)
-        # if mail:
-        #     mail.get_server_ipaddress('localhost')
+        mailparser.parse_from_bytes(data)
     except mailparser.exceptions.MailParserError:  # Want to ignore exceptions that are already handled by lib
         return
 
