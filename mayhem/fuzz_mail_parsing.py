@@ -12,12 +12,12 @@ def TestOneInput(data):
         mail = mailparser.parse_from_bytes(data)
         if mail:
             mail.get_server_ipaddress('localhost')
-    except mailparser.exceptions.MailParserError:
+    except mailparser.exceptions.MailParserError:  # Want to ignore exceptions that are already handled by lib
         pass
 
 
 def main():
-    atheris.Setup(sys.argv, TestOneInput, enable_python_coverage=True)
+    atheris.Setup(sys.argv, TestOneInput)
     atheris.Fuzz()
 
 
