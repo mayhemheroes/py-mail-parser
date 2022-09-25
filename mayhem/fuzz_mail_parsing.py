@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import atheris
-
+import pdb
 with atheris.instrument_imports():
     import sys
     import mailparser
@@ -8,9 +8,10 @@ with atheris.instrument_imports():
 
 @atheris.instrument_func
 def TestOneInput(data):
-
     try:
-        mailparser.parse_from_bytes(data)
+        mail = mailparser.parse_from_bytes(data)
+        if mail:
+            mail.get_server_ipaddress('localhost')
     except mailparser.exceptions.MailParserError:
         pass
 
