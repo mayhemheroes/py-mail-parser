@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import atheris
-import pdb
+import sys
+
 with atheris.instrument_imports():
-    import sys
     import mailparser
 
 
@@ -10,8 +10,8 @@ with atheris.instrument_imports():
 def TestOneInput(data):
     try:
         mail = mailparser.parse_from_bytes(data)
-        if mail:
-            mail.get_server_ipaddress('localhost')
+        # if mail:
+        #     mail.get_server_ipaddress('localhost')
     except mailparser.exceptions.MailParserError:  # Want to ignore exceptions that are already handled by lib
         return
 
