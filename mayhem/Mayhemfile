@@ -4,5 +4,6 @@ testsuite:
     - file://mayhem/testsuite
 
 cmds:
-  - cmd: /mayhem/fuzz_mail_parsing.py
+  - cmd: /mail-parser/mayhem/fuzz_mail_parsing.py
     libfuzzer: true
+    max_length: 1505000
